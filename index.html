@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Vue.js App</title>
+	<link href="main.css" rel="stylesheet">
+</head>
+<body>
+	<div id="app">
+		<!-- テンプレートを書き込んでいく -->
+		<p>{{message}}</p>	<!-- テキストのバインディング -->
+		<input v-model="message">	<!-- フォーム入力との同期 -->
+		<ol><li v-for="item in list">{{item}}</li></ol>	<!-- 繰り返しの描画 -->
+		<button v-on:click="handleClick">Click</button>	<!-- イベントの利用 -->
+		<p v-if="show">Hello Vue.js!</p>	<!-- 条件分岐 -->
+		<!-- トランジション&アニメーション -->
+		<button v-on:click="show2!=show2">切り替え</button>
+		<transition>
+			<p v-if="show2">Hello Vue.js</p>
+		</transition>
+	</div>
+	<!-- <script src="./vue.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script src="./main.js"></script>
+</body>
+</html>
